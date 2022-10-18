@@ -25,7 +25,10 @@ class UVPROJXProject(object):
         self.project['chip'] = str(self.root.Targets.Target.TargetOption.TargetCommonOption.Device)
         self.project['incs'] = self.root.Targets.Target.TargetOption.TargetArmAds.Cads.VariousControls.IncludePath.text.split(';')
         self.project['mems'] = self.root.Targets.Target.TargetOption.TargetCommonOption.Cpu
-        self.project['defs'] = self.root.Targets.Target.TargetOption.TargetArmAds.Cads.VariousControls.Define.text.split(',')
+        try:
+            self.project['defs'] = self.root.Targets.Target.TargetOption.TargetArmAds.Cads.VariousControls.Define.text.split(',')
+        except:
+            self.project['defs']=[]
         self.project['srcs'] = []
 
         for element in self.root.Targets.Target.Groups.getchildren():
