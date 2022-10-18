@@ -92,10 +92,10 @@ class CMake (object):
         
         self.context['cmake'] = cmake
         
-        abspath = os.path.abspath(os.path.join(self.path,'CMakeLists.txt'))
-        self.generateFile('CMakeLists.txt', abspath)
+        abspath = os.path.abspath(os.path.join(self.path,'gen-CMakeLists.txt'))
+        self.generateFile('gen-CMakeLists.txt', abspath)
 
-        print ('Created file CMakeLists.txt [{}]'.format(abspath))
+        print ('Created file gen-CMakeLists.txt [{}]'.format(abspath))
         
 #    def generateFile (self, pathSrc, pathDst='', author='Pegasus', version='v1.0.0', licence='licence.txt', template_dir='../PegasusTemplates'):
     def generateFile (self, pathSrc, pathDst='', author='Pegasus', version='v1.0.0', licence='licence.txt', template_dir='.'):
